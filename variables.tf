@@ -1,5 +1,5 @@
 variable "zone" {
-  default = "us-east-1a"
+  default = "us-west-1b"
 }
 
 variable "key_pair_name" {

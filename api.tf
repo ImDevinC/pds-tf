@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "us-west-1"
 }
 
 terraform {
@@ -11,4 +11,11 @@ terraform {
   }
 
   required_version = ">= 1.2.0"
+
+  backend "s3" {
+    bucket         = "imdevinc-tf-storage"
+    region         = "us-west-1"
+    key            = "pds"
+    dynamodb_table = "terraform-state-lock"
+  }
 }

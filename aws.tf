@@ -82,7 +82,7 @@ resource "aws_instance" "pds" {
 }
 
 resource "aws_ebs_volume" "pds_datastore" {
-  availability_zone = "us-east-1a"
+  availability_zone = var.zone
   size              = 28
   type              = "gp3"
   final_snapshot    = true
@@ -95,7 +95,7 @@ resource "aws_ebs_volume" "pds_datastore" {
 }
 
 resource "aws_volume_attachment" "pds" {
-  device_name = "/dev/xvda"
+  device_name = "/dev/xvdb"
   volume_id   = aws_ebs_volume.pds_datastore.id
   instance_id = aws_instance.pds.id
 }
