@@ -10,11 +10,11 @@ locals {
       to       = 80,
       protocol = "tcp"
     },
-    {
-      from     = 22,
-      to       = 22,
-      protocol = "tcp"
-    },
+    #    {
+    #      from     = 22,
+    #      to       = 22,
+    #      protocol = "tcp"
+    #    },
   ]
 }
 
